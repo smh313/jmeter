@@ -1,0 +1,5 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1595233282361,374,getRooms,200,OK,Thread Group 1-1,text,true,,4609,250,1,1,https://api.skyroom.online/v2/rooms,374,0,119
+1595233282735,120,postRoom,400,Bad Request,Thread Group 1-1,text,false,,359,319,1,1,https://api.skyroom.online/v2/rooms/,120,0,0
+1595233282855,251,patchRoom,200,OK,Thread Group 1-1,text,true,,736,532,1,1,https://api.skyroom.online/v2/rooms/158,251,0,0
+1595233283106,150,getRoom,200,OK,Thread Group 1-1,text,true,,738,254,1,1,https://api.skyroom.online/v2/rooms/158,150,0,0

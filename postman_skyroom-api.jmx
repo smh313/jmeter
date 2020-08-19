@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0">
+  <org.apache.jorphan.collections.HashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Skyroom Web API" enabled="true">
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <org.apache.jorphan.collections.HashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Http URL/API Test" enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">5</intProp>
+        </elementProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <longProp name="ThreadGroup.duration">0</longProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </ThreadGroup>
+      <org.apache.jorphan.collections.HashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get all session" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="pageSize" elementType="HTTPArgument" enabled="true">
+                <stringProp name="Argument.name">pageSize</stringProp>
+                <stringProp name="Argument.value">2</stringProp>
+                <stringProp name="Argument.desc">pageSize</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="sortBy" elementType="HTTPArgument" enabled="true">
+                <stringProp name="Argument.name">sortBy</stringProp>
+                <stringProp name="Argument.value">id</stringProp>
+                <stringProp name="Argument.desc">sortBy</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="sortOrder" elementType="HTTPArgument" enabled="true">
+                <stringProp name="Argument.name">sortOrder</stringProp>
+                <stringProp name="Argument.value">DESC</stringProp>
+                <stringProp name="Argument.desc">sortOrder</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="page" elementType="HTTPArgument" enabled="true">
+                <stringProp name="Argument.name">page</stringProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.desc">page</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <stringProp name="HTTPSampler.domain">api.skyroom.online</stringProp>
+          <stringProp name="HTTPSampler.path">/v2/sessions</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+        </HTTPSamplerProxy>
+        <org.apache.jorphan.collections.HashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="get all session" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <org.apache.jorphan.collections.HashTree/>
+        </org.apache.jorphan.collections.HashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get room by id" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <stringProp name="HTTPSampler.domain">api.skyroom.online</stringProp>
+          <stringProp name="HTTPSampler.path">/v2/rooms/41</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+        </HTTPSamplerProxy>
+        <org.apache.jorphan.collections.HashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="get room by id" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <org.apache.jorphan.collections.HashTree/>
+        </org.apache.jorphan.collections.HashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="update room" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.method">PATCH</stringProp>
+          <stringProp name="HTTPSampler.domain">api.skyroom.online</stringProp>
+          <stringProp name="HTTPSampler.path">/v2/rooms/127</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+        </HTTPSamplerProxy>
+        <org.apache.jorphan.collections.HashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="update room" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <org.apache.jorphan.collections.HashTree/>
+        </org.apache.jorphan.collections.HashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="delete rooms" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <stringProp name="HTTPSampler.domain">api.skyroom.online</stringProp>
+          <stringProp name="HTTPSampler.path">/v2/rooms/44</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+        </HTTPSamplerProxy>
+        <org.apache.jorphan.collections.HashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="delete rooms" enabled="true">
+            <collectionProp name="HeaderManager.headers"/>
+          </HeaderManager>
+          <org.apache.jorphan.collections.HashTree/>
+        </org.apache.jorphan.collections.HashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get all rooms" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="page" elementType="HTTPArgument" enabled="true">
+                <stringProp name="Argument.name">page</stringProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.desc">page</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="pageSize" elementType="HTTPArgument" enabled="true">
+                <stringProp name="Argument.name">pageSize</stringProp>
+                <stringProp name="Argument.value">10</stringProp>
+                <stringProp name="Argument.desc">pageSize</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <stringProp name="HTTPSampler.domain">api.skyroom.online</stringProp>
+          <stringProp name="HTTPSampler.path">/v2/rooms</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+        </HTTPSamplerProxy>
+        <org.apache.jorphan.collections.HashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="get all rooms" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer 14add3de-cb39-4308-aab3-846d0b3556a0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <org.apache.jorphan.collections.HashTree/>
+        </org.apache.jorphan.collections.HashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create direct login token" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument" enabled="true">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.value">{&
