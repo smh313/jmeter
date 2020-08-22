@@ -18,7 +18,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${numberOfThreads}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">120</stringProp>
@@ -71,6 +71,10 @@
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Content-Type</stringProp>
               <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">numberOfThreads</stringProp>
+              <stringProp name="Header.value">${__property(numberOfThreads,,)}</stringProp>
             </elementProp>
           </collectionProp>
           <stringProp name="TestPlan.comments">https://www.skyroom.online/skyroom/api/apikey-3087035-2-e12b2834470de64ab8b0a9a527cd3b67</stringProp>
